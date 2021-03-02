@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+	<h2>UTILITY</h2>
+	<br>
+	<div class="row py-2" >
+		<div class = "col d-block-sm pb-4 ">
+			<a href="{{ url_for('.searchlyric', _anchor='portfolio',id=0) }}" style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">SEARCH LYRIC</p> </a>
+		</div>
+		<div class = "col d-block-sm">
+			<a href="{{ url_for('.searchsong', _anchor='portfolio',id=0) }}"style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">SEARCH SONG</p> </a>
+		 </div>
+		<div class = "col d-block-sm">
+		   <a href= "{{ url_for('.queryaudio', _anchor='portfolio') }}" style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">QUERY AUDIO</p> </a>
+		</div>
+	  </div>
+	  <b style="font-size: 70px; color: black;font-weight:bold;">CHARTS</b>
+	  <p style="color: rgb(211, 61, 111); font-size: 15px;font-weight: 500;">TRENDING ON DOVICH</p>
+</header>
+<div class="container" style="padding-left: 0px;padding-right: 0px;">
+	
+  	<div class="row">
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >1 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Perfect'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; &nbsp;
+				<span style="font-size: 25px; color: black; font-weight: 500;">Perfect</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Ed Sheeran</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >2 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'CÓ CHẮC YÊU LÀ ĐÂY'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp;
+				<span style="font-size: 25px; color: black; font-weight: 500;">Có Chắc Yêu Là Đây</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; &emsp;&emsp;&emsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Sơn Tùng MTP</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >3 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Love Yourself'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Love Yourself </span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Justin Bieber</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >4 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Attention'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Attention</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Charlie Puth</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >5 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Thế Là Tết'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Thế Là Tết </span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Đức Phúc</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >6 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'cardigan'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">cardigan</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Taylor Swift</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >7 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Em Mới Là Người Yêu Anh (Acoustic Version)'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Em Mới Là Người Yêu Anh </span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">MIN</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >8 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'TA LÀ (feat_ Clean Bandit)'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Ta Là</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Phương Ly</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 10px;" >9 &emsp;&emsp;&emsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Bốn Chữ Lắm'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Bốn Chữ Lắm</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Trúc Nhân</span></p>
+		</div>
+		<div class="col-md-10 offset-md-1 height-80" style="border-bottom: 2px solid rgb(189, 189, 189);padding-top: 5px; padding-left: 0px;">
+			<p class="d-flex align-items-center " style="margin-bottom: 5px;padding-left: 8px;" >10 &emsp;&emsp;&nbsp;&nbsp;&nbsp; 
+				<img style="padding-bottom: 1px;" src="{{url_for('static',filename = 'images/'+'Em Khong The'+'.jpg')}}" class="avatar-square" alt="">&emsp;&emsp; 
+				<span style="font-size: 25px; color: black; font-weight: 500;">Em Không Thể</span>  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				 <span style="font-size: 25px; color: black; font-weight: 500;">Tiên Tiên</span></p>
+		</div>	
+
+		</div> <!-- row -->
+	  </div> <!-- container -->  
+{% endblock %}

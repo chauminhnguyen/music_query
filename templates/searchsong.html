@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+	<h2>UTILITY</h2>
+	<br>
+	<div class="row py-2" >
+		<div class = "col d-block-sm pb-4 ">
+			<a href="{{ url_for('.searchlyric',id=0,_anchor='portfolio') }}" style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">SEARCH LYRIC</p> </a>
+		</div>
+		<div class = "col d-block-sm">
+			<a href="{{ url_for('.searchsong',id=0, _anchor='portfolio') }}"style="size: 80px;"> <p style="color: #EE2E62; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">SEARCH SONG</p> </a>
+		 </div>
+		<div class = "col d-block-sm">
+		   <a href= "{{ url_for('.queryaudio', _anchor='portfolio') }}" style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">QUERY AUDIO</p> </a>
+		</div>
+	  </div>
+</header>
+<br><br><br>
+
+<div class="container" style="padding-left: 0px;padding-right: 0px;">
+	  <div class="row no-gutters search_lyric">
+	<form action="" method="post" class="">
+
+			 <input class="form-control border  " name="inp" type="search" placeholder="Search lyric & more" id="example-search-input4" style="width:200px"><span>
+				 <button class="btn btn-outline-light border-left-0 rounded-right  bt-ps" type="submit">
+				<i class="fa fa-search"></i>
+			 </button></span>
+			
+	</form>
+   </div>
+	<div class="row ">
+	  <div class="col-12 py-5" style="padding-left: 0px;padding-right: 0px;">
+		<div class="container" style="padding-left: 0px;padding-right: 0px;">
+		  <div class="row">
+			{%if result_song!=[] %}
+			<div class="col-md-6" style="padding-top: 0px;">
+				<h6 class="blog-title pt-2 pb-0 color-text" style="text-align: left; margin-bottom: 7px; font-weight: 500px; ">TOP RESULT</h6>
+
+				{% for i in range(5) %}
+                        <a href="{{url_for('.searchsong', _anchor='portfolio',id=loop.index0)}}" style="text-decoration: none;">
+							<div class="back mb-1 height-70 ">
+								<p style="font-size: 20px;" class="d-flex align-items-center first-link "><img src="{{url_for('static',filename = 'images/'+result_song[i]+'.jpg')}}" class="avatar-square" alt=""><span class="ct">&nbsp;&nbsp;{{results[i]}}</span></p>
+							</div></a>
+                    {% endfor %}
+
+			</div> <!-- col-md-6 -->
+			<div class="col-md-6" style="padding-top: 0px;">
+				<h6 class="blog-title pt-2 pb-0 color-text" style="text-align: left; margin-bottom: 7px; font-size: 20px;">LYRICS</h6>
+				<div class="back mb-1 bg">
+					<!-- <p style="text-align: left;padding-left: 10px; margin-bottom: 5px;"><img src="images/avatar.jpg" class="avatar-circle	" alt="">{{lyrics[0]}}</p> -->
+					<p style="text-align: left;padding-left: 10px; margin-bottom: 5px;">
+						<!-- {{lyrics[0]}} -->
+						{% for i in range(0,(lyrics[index]|length)-1,2) %}
+							{% autoescape false %}
+								{{lyrics[index][i]}}
+							{% endautoescape %}
+							<b style="font-weight: 500px;" class="bold_text ct">{{lyrics[index][i+1]}}</b>
+						{% endfor %}
+					</p>
+				</div>
+				
+			</div> <!-- col-md-6 -->
+			{%endif%}
+		  </div> <!-- row -->
+		</div> <!-- container -->
+{% endblock %}

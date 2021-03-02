@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+	<h2>UTILITY</h2>
+	<br>	
+	<div class="row py-2" >
+		<div class = "col d-block-sm pb-4 ">
+			<a href="{{ url_for('.searchlyric',id=0, _anchor='portfolio') }}" style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">SEARCH LYRIC</p> </a>
+		</div>
+		<div class = "col d-block-sm">
+			<a href="{{ url_for('.searchsong',id=0, _anchor='portfolio') }}"style="size: 80px;"> <p style="color:; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">SEARCH SONG</p> </a>
+		 </div>
+		<div class = "col d-block-sm">
+		   <a href= "{{ url_for('.queryaudio', _anchor='portfolio') }}" style="size: 80px;"> <p style="color:#EE2E62; font-family:Arial, Helvetica, sans-serif;font-size:20px ; ">QUERY AUDIO</p> </a>
+		</div>
+		<div class="col-12 left" style="padding-top: 0px;">
+			<form method="post" enctype="multipart/form-data">
+
+				<!-- <label for="myfile">Select a file:</label> -->
+				<input  type="file" name="file"/>
+				<br>
+				<br>
+				<input type="submit" id="submitButton" value="Search"/>
+			</form>
+			
+			<div id="speechTranscriptContainer">
+				<script>
+					var vid = document.getElementById("myVideo");
+						vid.currentTime = {{begin}};
+				</script>
+			</div>
+
+		</div>
+		
+	</div>
+	
+	<div>
+		<audio id ="myVideo">
+			<source src="{{ url_for('static', filename= 'songs/song_artist[0]') }}" >
+		</audio>
+		<p>ssssssssssssssssssss</p>
+	</div>
+</header>
+
+<div class="container" style="padding-left: 0px;padding-right: 0px;">
+		{% if songs != "" %}
+	<div class="row">
+		<div class="col-12 py-5" style="padding-left: 0px;padding-right: 0px;">
+		  <div class="container" style="padding-left: 0px;padding-right: 0px;">
+			<div class="row">
+			  <div class="col-md-6">
+				  <p class="blog-title pt-2 pb-0 color-text" style="text-align: left; margin-bottom: 7px; ">TOP RESULTS </p>
+				  
+				  <div class="back mb-1 height-70">
+					<p style="font-size: 20px;" class="d-flex align-items-center"><img src="{{url_for('static',filename = 'images/'+songs[0]+'.jpg')}}" class="avatar-square	" alt="">&nbsp;&nbsp;{{songs[0]}}</p>
+				</div>
+				  <div class="back mb-1 height-70 blue-btn1">
+					  <p style="padding-left: 10px; font-size: 20px;" class="d-flex align-items-center "><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-circle" alt="">
+					<span class="first-link">&nbsp;&nbsp;{{artists[0]}} </span></p>
+				  </div>
+				</div>
+				  <!-- <div class="back mb-1 height-70 ">
+					  <audio id ="myVideo" controls >
+						  <source src="{{ url_for('static', filename= transcript) }}" >
+					  </audio>
+					  <p style="text-align: left;padding-left: 10px;margin-bottom: 0px;"><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-circle" alt="">{{songs[1]}}</p>
+			  </div> -->
+			  <div class="col-md-6">
+				  <p class="blog-title pt-2 pb-0 color-text" style="text-align: left; margin-bottom: 7px;">SONGS</p>
+				  <div class="back mb-1 height-70">
+					  <p style="font-size: 20px;" class="d-flex align-items-center"><img src="{{url_for('static',filename = 'images/'+songs[0]+'.jpg')}}" class="avatar-square	" alt="">&nbsp;&nbsp;{{song_artist[0]}}</p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="font-size: 20px;" class="d-flex align-items-center"><img src="{{url_for('static',filename = 'images/'+songs[1]+'.jpg')}}" class="avatar-square	" alt="">&nbsp;&nbsp;{{song_artist[1]}}</p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="font-size: 20px;" class="d-flex align-items-center"><img src="{{url_for('static',filename = 'images/'+songs[2]+'.jpg')}}" class="avatar-square	" alt="">&nbsp;&nbsp;{{song_artist[2]}}</p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="font-size: 20px;" class="d-flex align-items-center"><img src="{{url_for('static',filename = 'images/'+songs[3]+'.jpg')}}" class="avatar-square	" alt="">&nbsp;&nbsp;{{song_artist[3]}}</p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="font-size: 20px;" class="d-flex align-items-center"><img src="{{url_for('static',filename = 'images/'+songs[4]+'.jpg')}}" class="avatar-square	" alt="">&nbsp;&nbsp;{{song_artist[4]}}</p>
+				  </div>
+			  </div> <!-- col-md-6 -->
+			  <div class="col-md-6">
+				  <h6 class="blog-title pt-2 pb-0 color-text" style="text-align: left; margin-bottom: 7px; font-size: 20px;">LYRIC MATCHES</h6>
+				  <div class="back mb-1 height-70">
+					  <p style="text-align: left;margin-bottom: 5px;"><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-square	" alt=""></p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="text-align: left;"><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-square	" alt=""></p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="text-align: left;margin-bottom: 5px;"><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-square	" alt=""></p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="text-align: left;margin-bottom: 5px;"><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-square	" alt=""></p>
+				  </div>
+				  <div class="back mb-1 height-70">
+					  <p style="text-align: left;margin-bottom: 5px;"><img src="{{url_for('static',filename = 'images/avatar.jpg')}}" class="avatar-square	" alt=""></p>
+				  </div>
+				
+			  </div> <!-- col-md-6 -->
+	
+			</div> <!-- row -->
+		</div> <!-- container -->
+		<!-- {%endif%}	 -->
+{% endblock %}
