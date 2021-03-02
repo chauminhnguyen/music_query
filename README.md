@@ -9,6 +9,7 @@ This music query has 3 parts:
 ## Report
 
 Our report is below:
+
 [Report](Report.pdf)
 
 
@@ -16,7 +17,9 @@ Our report is below:
 
 Prepare musics + images(albums) + lyrics path.
 
-**NOTES: Images: Put in ./static/ images/ path**
+**NOTES:**
+* Images: Put in ./static/ images/ path.
+* All of musics, images, lyrics of 1 song must have same name.
 
 ## 1. Activate environment
 
